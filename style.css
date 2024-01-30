@@ -1,0 +1,108 @@
+/* body태그 자체에 css 요소 부여 */
+body {
+  font-family: "Gamja Flower", sans-serif;
+  margin: 0;
+  display: flex; /*유연하게 정렬 옵션*/
+  justify-content: center; /*가운데 정렬 옵션*/
+  background-image: url("./background.jpg"); /*index.html파일 기준으로 같은 폴더 안의 해당 이미지를 가져오라*/
+  background-size: cover; /* 배경 이미지 크기를 화면에 맞게 조정 */
+  background-position: center; /* 배경 이미지를 중앙에 위치시킴 */
+  background-repeat: no-repeat; /* 배경 이미지가 반복되지 않도록 함 */
+}
+/* 너비는 390픽셀, 배경색이 좀 필요하고 부모(body) 높이 전체를 쓸거야 */
+.container {
+  width: 360px; /*휴대폰의 넓이*/
+  background-color: #96c0ed;
+  height: 100%; /*body 태그의 높이 만큼*/
+}
+
+.photos {
+  margin-top: 30px;
+}
+
+.photo-frame {
+  background-color: white;
+  margin: 15px 20px;
+  height: 200px;
+
+  background-size: contain; /*사진을 크기에 맞게 조절하되 잘리지 않게 함*/
+  background-repeat: no-repeat; /*사진이 반복되지 않게 함*/
+  background-position: right; /*사진이 오른쪽에 오게 함*/
+  position: relative; /*사진 안의 글씨를 어디에 위치하게 할 것인가*/
+
+  cursor: pointer; /*사진위에 마우스를 올리면 커서를 손가락 모양으로 바꾼다*/
+}
+/* 아래 영역 전체는, flexible하게 하되 그 내부 아이템들은 세로로 쌓음 */
+/* 모두 가운데 정렬 */
+.footer {
+  display: flex; /*왼쪽으로 치우쳐 있는데 가운데로 가져오기 위함*/
+  flex-direction: column; /*설명이랑 날짜가 세로로 되게 지정*/
+  align-items: center; /*맨 아래 사진 설명을 가운데 정렬*/
+}
+/* 아래 영역의 제목 부분은 폰트가 좀 두껍고, 사이즈는 25픽셀! 흰색으로 */
+.f-title {
+  color: white;
+  font-size: 30px;
+  font-weight: 900;
+}
+/* 아래 영역의 날짜 부분은 폰트가 중간 두께고, 사이즈는 15픽셀 흰색으로 */
+.f-date {
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  padding-bottom: 7px;
+}
+
+#image1 {
+  background-image: url("./karina_selfi_1.png");
+}
+
+#image2 {
+  background-image: url("./karina_selfi_2.png");
+}
+
+#image3 {
+  background-image: url("./karina_selfi_3.png");
+}
+
+#image4 {
+  background-image: url("./karina_selfi_4.png");
+}
+
+.photo-description {
+  /* 배경은 검게, 글자는 흰 색으로 */
+  color: white;
+  background-color: black;
+
+  /* 가로 너비는 내부 콘텐츠에 딱 맞게! */
+  width: fit-content;
+  padding: 0 20px;
+  margin-bottom: 10px;
+
+  /* 경계선 */
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+
+  transform: translate(-50%); /*글씨를 왼쪽에서 50% 즉 가운데 정렬*/
+  left: 50%;
+
+  opacity: 0;
+}
+
+.video {
+  width: 100%;
+  height: 100%; /*영상 틀 안에 꽉 채우기*/
+}
+
+/* opacity : 투명도를 의미해요! opacity는 1에 가까워 질 수록 불투명하다. 즉 다 보인다. */
+.showText {
+  opacity: 1;
+  transition: opacity 0.5s linear;
+}
+
+/* opacity : 투명도를 의미해요! opacity는 0에 가까워 질 수록 투명하다. 즉 안보인다. */
+/* transition : 나타날 때 0.5초동안 천천히 나타나는 효과를 주라는 의미에요 */
+.hideText {
+  opacity: 0;
+}
