@@ -14,6 +14,7 @@ body {
   width: 360px; /*휴대폰의 넓이*/
   background-color: #96c0ed;
   height: 100%; /*body 태그의 높이 만큼*/
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .photos {
